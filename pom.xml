@@ -16,6 +16,28 @@
     </dependency>
   </dependencies>
   <build>
+    <plugins>
+      <!-- Compiler Plugin to specify Java version -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>11</source> <!-- specify the source version -->
+          <target>11</target> <!-- specify the target version -->
+        </configuration>
+      </plugin>
+
+      <!-- WAR Plugin for building the WAR file -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.1</version>
+        <configuration>
+          <warSourceDirectory>src/main/webapp</warSourceDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
     <finalName>java-hello-world</finalName>
   </build>
 </project>
